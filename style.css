@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(223, 19%, 93%);
+  font-family: "Rubik";
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  position: absolute;
+  top: 20px;
+  right: 50%;
+  translate: 50% 0%;
+  width: 60%;
+}
+
+body p {
+  font-size: 16px;
+}
+
+.comment,
+.reply-com,
+.add-new--comment {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 25px 25px 25px 0;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.add-new--comment {
+  margin: 0;
+  margin-bottom: 40px;
+  align-items: start;
+  justify-content: space-evenly;
+  padding: 25px 0 0 0;
+}
+
+.vote {
+  background-color: hsl(228, 33%, 97%);
+  height: 80px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5px;
+  margin: 0 20px;
+}
+
+.score {
+  color: hsl(238, 40%, 52%);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.up-vote,
+.down-vote {
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.avatar,
+.reply-img,
+.add-comm--avatar {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.mess-info,
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.actions {
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  justify-content: space-between;
+}
+
+.mess-info {
+  width: 50%;
+  justify-content: baseline;
+}
+
+.mess-nav {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.user-name {
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.mess-date {
+  color: hsl(211, 10%, 45%);
+  font-size: 14px;
+}
+
+.current--user-sign {
+  margin-right: 10px;
+  font-size: 12px;
+  background-color: hsl(238, 40%, 52%);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.action {
+  margin: 0 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s;
+}
+
+.action:hover {
+  opacity: 0.6;
+}
+
+.action img {
+  margin-right: 8px;
+}
+
+.reply,
+.edit {
+  color: hsl(238, 40%, 52%);
+  font-weight: 500;
+}
+
+.delete {
+  color: hsl(358, 79%, 66%);
+  font-weight: 500;
+}
+
+.mess-content {
+  color: hsl(211, 10%, 45%);
+}
+
+.reply-com {
+  width: 90%;
+}
+
+.tag {
+  color: hsl(238, 40%, 52%);
+  font-weight: 500;
+}
+
+.vote--symb:hover {
+  filter: brightness(0);
+}
+
+.reply-to-comment {
+  width: 90%;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px 25px 25px;
+  margin-bottom: 20px;
+}
+
+.reply-input {
+  width: 75%;
+  max-width: 75%;
+  resize: none;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid hsl(222, 44%, 85%);
+  transition: border 0.2s;
+  font-size: 14px;
+}
+
+.reply-input:focus {
+  border: 1px solid hsl(222, 73%, 73%);
+  outline: none;
+}
+
+.reply-submit-btn,
+.submit-edit,
+.cancel-replyin-btn,
+.send-btn {
+  border: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: white;
+  background-color: hsl(238, 40%, 52%);
+  border-radius: 5px;
+  transition: opacity 0.2s;
+}
+
+.send-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+.reply-submit-btn:hover,
+.cancel-replyin-btn:hover,
+.submit-edit:hover,
+.send-btn:hover {
+  opacity: 0.7;
+}
+
+.cancel-replyin-btn {
+  background-color: hsl(358, 79%, 66%);
+  margin-top: 10px;
+}
+
+.replying-actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  translate: 50% -50%;
+  background-color: white;
+  padding: 20px 30px;
+  line-height: 40px;
+  border-radius: 10px;
+}
+
+.modal button {
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  color: white;
+}
+
+.modal button:hover {
+  opacity: 0.6;
+}
+
+.cancel-deleting {
+  background-color: rgb(103, 114, 126);
+}
+
+.submit-deleting {
+  background-color: hsl(358, 79%, 66%);
+}
+
+.hidden,
+.hidden-editing--comm {
+  display: none;
+}
+
+.update-input,
+.add-comm--input {
+  width: 90%;
+  height: 90px;
+  resize: none;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid hsla(222, 45%, 85%, 0.582);
+  transition: border 0.3s;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.add-comm--input {
+  width: 70%;
+}
+
+.update-input:focus,
+.add-comm--input:focus {
+  border: 1px solid hsl(222, 81%, 66%);
+  outline: none;
+}
+
+.message-det {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .app {
+    width: 80%;
+  }
+
+  .mess-info {
+    width: 70%;
+  }
+}
+
+@media (max-width: 700px) {
+  .app {
+    width: 95%;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal {
+    width: 340px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 550px) {
+  .actions {
+    top: auto;
+    bottom: 18px;
+  }
+
+  .comment,
+  .reply-com {
+    padding: 25px 25px 60px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .add-new--comment {
+    display: block;
+    position: relative;
+    height: 200px;
+  }
+
+  .add-comm--avatar {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .send-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .add-comm--input {
+    margin-left: 25px;
+    width: 90%;
+  }
+
+  .vote {
+    border-radius: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+    height: auto;
+    padding: 8px 6px;
+    margin: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .message-det {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .modal {
+    width: 300px;
+  }
+}
+
+@media (max-width: 375px) {
+  .mess-info {
+    width: 90%;
+  }
+}
+
+.preloader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  background: black url(images/preloader.gif) no-repeat center center;
+  background-size: 10%;
+}
